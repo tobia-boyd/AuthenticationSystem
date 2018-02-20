@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+package authenticationsystem;
+import java.util.Scanner;
+import java.security.MessageDigest;
+/**
+ * Program allows employees to securely enter username and password to gain
+ * access to the zoo's computer system. Each user will only have access to 
+ * information pertaining to their specific role.
+ * @author tobia
+ */
+public class AuthenticationSystem {
 
-You can use the [editor on GitHub](https://github.com/tobia-boyd/AuthenticationSystem/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tobia-boyd/AuthenticationSystem/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        String username = "";
+        String originalPassword = "";
+        String hashedPassword = "";
+        int i = 1;
+        
+        for (i = 1; i <= 3; ++i){
+            
+            System.out.println("Username: "); //prompt user to enter their username
+            username = scnr.nextLine();
+        
+            System.out.println("Password: "); //prompt user to enter theit password
+            originalPassword = scnr.nextLine();
+        
+            if (username.equals("bruce.grizzlybear") && originalPassword.equals("letmein")) { //username needs a specific password
+                System.out.print("Welcome Admin User!"); //just a placeholder. should redirect the user to their view of the site
+            }
+            if (username.equals("rasario.dawson") && originalPassword.equals("animal doctor")) {
+                System.out.print("Welcome Admin User!");
+            }
+            if (username.equals("bernie.gorilla") && originalPassword.equals("secret password")) {
+                System.out.print("Welcome Vet!");
+            }
+            if (username.equals("jerome.grizzlybear") && originalPassword.equals("grizzly1234")) {
+                System.out.print("Welcome Vet");
+            }
+            if (username.equals("donald.monkey") && originalPassword.equals("M0nk3y business")) {
+                System.out.print("Welcome Zookeeper!");
+            }
+            if (username.equals("griffin.keyes") && originalPassword.equals("alphabet soup")) {
+                System.out.print("Welcome Zookeeper!");
+            }
+            else {
+                System.out.println("Invalid credentials. You will be locked out after 3 failed attempts.");
+            }
+        }
+    }
+    
+}
