@@ -1,17 +1,20 @@
 package authenticationsystem;
 import java.util.Scanner;
 import java.security.MessageDigest;
+
 /**
  * Program allows employees to securely enter username and password to gain
  * access to the zoo's computer system. Each user will only have access to 
  * information pertaining to their specific role.
  * @author tobia
  */
+
 public class AuthenticationSystem {
 
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         String username = "";
