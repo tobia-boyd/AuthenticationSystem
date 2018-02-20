@@ -10,11 +10,6 @@ import java.security.MessageDigest;
  */
 
 public class AuthenticationSystem {
-
-    /**
-     * @param args the command line arguments
-     */
-
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         String username = "";
