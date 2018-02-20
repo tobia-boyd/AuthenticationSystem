@@ -9,6 +9,7 @@ import java.security.MessageDigest;
  * @author tobia
  */
 
+
 public class AuthenticationSystem {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
